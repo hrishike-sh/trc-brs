@@ -1,4 +1,129 @@
-.days {
-  height: 2000px;
-  background-color: white;
+* {
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 64px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.content {
+  width: 100%;
+}
+
+.d {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  min-height: 100vh;
+}
+
+.day {
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+.text {
+  border: 1px solid white;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+}
+
+.day h1 {
+  font-size: 4rem;
+  font-family: "Handjet", cursive;
+}
+
+.day-content {
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  margin: 0 20px;
+  min-height: 100vh;
+}
+
+.day-content p {
+  margin: 10px 0;
+}
+
+.alternate-left .day {
+  grid-column: 1;
+}
+
+.alternate-left .day-content {
+  grid-column: 2;
+}
+
+.alternate-right .day {
+  grid-column: 2;
+}
+
+.alternate-right .day-content {
+  grid-column: 1;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+
+  .d {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .day,
+  .day-content {
+    padding: 10px;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .day {
+    order: 1;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .day-content {
+    order: 2;
+    margin: 0;
+    padding: 15px;
+    min-height: 80vh;
+  }
+
+  .day h1 {
+    font-size: 3rem;
+  }
+
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .day-content p {
+    font-size: 1rem;
+  }
 }
